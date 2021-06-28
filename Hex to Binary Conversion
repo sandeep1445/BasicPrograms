@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main()
+{
+    int num,count;
+    printf("Enter the number?\n");
+    scanf("%d",&num);
+    printf("The corresponding binary number is:\n");
+    count=31;
+    while(count>=0)
+    {
+        printf("%d",(num>>count)&0x1);
+        count--;
+    }
+    return 0;
+}
