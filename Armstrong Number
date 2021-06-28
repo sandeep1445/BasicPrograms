@@ -37,7 +37,7 @@ unsigned int IsArmstrong(unsigned int num)
 unsigned int main()
 {
    unsigned int num;
-   scanf("%d",&num);
+   scanf("%u",&num);
    (IsArmstrong(num)==num)?printf("Armstrong Number"):printf("Not an Armstrong Number");
    return 0;
 }
