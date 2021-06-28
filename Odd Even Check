@@ -1,7 +1,7 @@
 int main()
 {
    unsigned int num;
-   scanf("%d",&num);
+   scanf("%u",&num);
    (num&0x1)?printf("odd"):printf("even");
    return 0;
 }
