@@ -12,7 +12,7 @@ unsigned int fact(unsigned int digit)
             return(digit*fact(digit-1));
     }
 }
-unsigned int strong_check(unsigned int num)
+unsigned int IsStrong(unsigned int num)
 {
     unsigned int sum;
     while(num)
@@ -27,7 +27,7 @@ int main()
 {
     unsigned int num;
     scanf("%u",&num);
-    (strong_check(num)==num)?printf("Strong Number"):printf("Not a Strong Number");
+    (IsStrong(num)==num)?printf("Strong Number"):printf("Not a Strong Number");
 
     
     return 0;
