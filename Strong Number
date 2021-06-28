@@ -14,7 +14,7 @@ unsigned int fact(unsigned int digit)
 }
 unsigned int IsStrong(unsigned int num)
 {
-    unsigned int sum;
+    unsigned int sum=0;
     while(num)
     {
         sum+=fact(num%10);
