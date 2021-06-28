@@ -72,6 +72,8 @@ void push()
             {
                 insert->next=temp->next;
                 temp->next=insert;
+                if(insert->next==NULL)
+                last=insert;
             }
         }
     }
