@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int power(int digit,int n)
+unsigned int power(unsigned int digit,unsigned int n)
 {
     if(n==0)
     return 1;
@@ -10,9 +10,9 @@ int power(int digit,int n)
     return digit*power(digit,n/2)*power(digit,n/2);
 }
 
-int order(int num)
+int order(unsigned int num)
 {
-    int i;
+    unsigned int i;
     while(num)
     {
         i++;
@@ -21,9 +21,9 @@ int order(int num)
     return i;
 }
 
-int IsArmstrong(int num)
+unsigned int IsArmstrong(unsigned int num)
 {
-    int n,sum=0;
+    unsigned int n,sum=0;
     n=order(num);
     while(num)
     {
@@ -34,9 +34,9 @@ int IsArmstrong(int num)
     
 }
 
-int main()
+unsigned int main()
 {
-   int num;
+   unsigned int num;
    scanf("%d",&num);
    (IsArmstrong(num)==num)?printf("Armstrong Number"):printf("Not an Armstrong Number");
    return 0;
