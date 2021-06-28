@@ -1,0 +1,137 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    unsigned int data;
+    struct node *next;
+}*head=NULL,*last,*temp,*insert,*delete;
+
+void create()
+{
+    unsigned int NumOfNodes,i;
+    printf("Enter the number of nodes to be created?\n");
+    scanf("%u",&NumOfNodes);
+    for(i=0;i<NumOfNodes;i++)
+    {
+        if(head==NULL)
+        {
+            head=(struct node*)malloc(sizeof(struct node));
+            printf("Enter the data?\n");
+            scanf("%u",&head->data);
+            head->next==NULL;
+            last=head;
+        }
+        else
+        {
+            temp=(struct node*)malloc(sizeof(struct node));
+            last->next=temp;
+            printf("Enter the data?\n");
+            scanf("%u",&temp->data);
+            temp->next=NULL;
+            last=temp;
+        }
+    }
+}
+void regenerate()
+{
+    temp=(struct node*)malloc(sizeof(struct node));
+    temp->next=head;
+    scanf("%u",&temp->data);
+    head=temp;
+}
+void display()
+{
+    for(temp=head;temp!=NULL;temp=temp->next)
+    {
+        printf("%u ",temp->data);
+    }
+    printf("\n");
+}
+void push()
+{
+    int position, i;
+    printf("Enter the position in which element has to be added?\n");
+    scanf("%u",&position);
+    insert=(struct node*)malloc(sizeof(struct node));
+    printf("Enter the data?\n");
+    scanf("%u",&insert->data);
+    if(position==1)
+    {
+        temp=head;
+        insert->next=temp;
+        head=insert;
+    }
+    else
+    {
+        for(temp=head,i=1;temp!=NULL;temp=temp->next,i++)
+        {
+            if(position==(i+1))
+            {
+                insert->next=temp->next;
+                temp->next=insert;
+            }
+        }
+    }
+}
+void pop()
+{
+    int position,i;
+    printf("Enter the position of element to be deleted?\n");
+    scanf("%u",&position);
+    if(position==1)
+    {
+        temp=head->next;
+        free(head);
+        head=temp;
+    }
+    else
+    {
+        for(temp=head,i=1;temp!=NULL;temp=temp->next,i++)
+        {
+            if(position==(i+1))
+            {
+                if(temp->next==last)
+                {
+                    temp->next=NULL;
+                    free(last);
+                    last=temp;
+                }
+                else
+                {
+                    delete=temp->next;
+                    temp->next=temp->next->next;
+                    free(delete);
+                    break;
+                }
+            }
+        }
+    }
+}
+
+int main()
+{
+    unsigned int operation=0;
+    while(1)
+    {
+        printf("Enter the Operation to be performed?\n");
+        scanf("%u",&operation);
+        switch(operation)
+        {
+            case 1: create();
+            break;
+            case 2: regenerate();
+            break;
+            case 3: display();
+            break;
+            case 4: push();
+            break;
+            case 5: pop();
+            break;
+            default:
+            break;
+        }
+    }
+
+    return 0;
+}
