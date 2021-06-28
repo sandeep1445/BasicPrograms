@@ -50,7 +50,7 @@ void display()
 }
 void push()
 {
-    int position, i;
+    unsigned int position, i;
     printf("Enter the position in which element has to be added?\n");
     scanf("%u",&position);
     insert=(struct node*)malloc(sizeof(struct node));
@@ -76,7 +76,7 @@ void push()
 }
 void pop()
 {
-    int position,i;
+    unsigned int position,i;
     printf("Enter the position of element to be deleted?\n");
     scanf("%u",&position);
     if(position==1)
