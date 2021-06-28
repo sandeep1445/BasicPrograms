@@ -39,4 +39,5 @@ int main()
    int num;
    scanf("%d",&num);
    (IsArmstrong(num)==num)?printf("Armstrong Number"):printf("Not an Armstrong Number");
+   return 0;
 }
