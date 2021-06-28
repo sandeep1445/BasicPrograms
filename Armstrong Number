@@ -10,7 +10,7 @@ unsigned int power(unsigned int digit,unsigned int n)
     return digit*power(digit,n/2)*power(digit,n/2);
 }
 
-int order(unsigned int num)
+unsigned int order(unsigned int num)
 {
     unsigned int i;
     while(num)
