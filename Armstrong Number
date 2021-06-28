@@ -23,12 +23,11 @@ int order(int num)
 
 int IsArmstrong(int num)
 {
-    int n,sum=0,digit;
+    int n,sum=0;
     n=order(num);
     while(num)
     {
-        digit=num%10;
-        sum+=power(digit,n);
+        sum+=power(num%10,n);
         num=num/10;
     }
     return sum;
